@@ -1,12 +1,19 @@
 'use strict';
 
-angular.module('MusicManager', [
+angular.module('robot.manager', [
     'itesoft',
     'ngRoute',
     'ngSanitize',
     'pascalprecht.translate',
-    'ui.bootstrap.dropdown'
+    'ui.bootstrap.dropdown',
+    'localStorage.services',
+    'ui.hand'
     ])
+    .config(['ITLocalStorageProvider', '$rootScopeProvider',
+        function(ITLocalStorageProvider, $rootScopeProvider){
+            ITLocalStorageProvider.defaultKey = "robot_manager";
+        }])
+
     .config(['$translateProvider', '$translatePartialLoaderProvider', function ($translateProvider, $translatePartialLoaderProvider) {
         // Declare languages mapping
         $translateProvider.registerAvailableLanguageKeys(['en', 'fr', 'de'], {

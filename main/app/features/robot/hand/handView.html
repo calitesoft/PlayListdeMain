@@ -1,0 +1,17 @@
+<h1>Hand view</h1>
+
+<table>
+    <tr>
+        <td>
+            <robot-hand editable="true" hand-model="currentStep.hand" scale="0.8"></robot-hand>
+        </td>
+
+        <td>
+            <button ng-click="stepService.save(currentStep)">Add</button>
+        </td>
+
+        <td>
+            <button ng-click="robotPlayerService.playHand(currentStep.hand)">Play</button>
+        </td>
+    </tr>
+</table>
